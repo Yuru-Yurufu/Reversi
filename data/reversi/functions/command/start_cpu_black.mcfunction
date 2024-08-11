@@ -227,10 +227,7 @@
   scoreboard players set result_black_count reversi 2
   scoreboard players set result_white_count reversi 2
 
-  data modify storage yrfs_reversi: root.title.padding.black set value "0"
-  data modify storage yrfs_reversi: root.title.padding.white set value "0"
-  data modify storage yrfs_reversi: root.title.turn set value '{"text":"\\u0001","font":"reversi"}'
-  data modify storage yrfs_reversi: root.title.gage_background set value [{"text":"左","font":"reversi","color":"#181881"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-4"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"右"}]
+  data modify storage yrfs_reversi: root.title set value {turn:'{"text":"\\u0001","font":"reversi"}',gage_background:[{"text":"左","font":"reversi","color":"#181881"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-4"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"右"}]}
 
 # ゲームスタート
   function yrfs_reversi:black/cpu/virtual_turn/init
