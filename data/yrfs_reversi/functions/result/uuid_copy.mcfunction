@@ -2,9 +2,7 @@
 #
 # UUIDをstorageにコピーする
 #
-# @within function
-#           yrfs_reversi:result/gui_loop
-#           yrfs_reversi:main
+# @within function yrfs_reversi:main
 
 # UUIDをコピーして渡す
   data modify storage yrfs_reversi: root.temp.uuid set from entity @s UUID
