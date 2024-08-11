@@ -17,13 +17,13 @@
   execute if entity @s[tag=reversi_gui_entry_white] as @a[tag=reversi_clicker] run function yrfs_reversi:gui/entry/white
 
 # ゲームを終了する
-  execute if entity @s[tag=reversi_gui_end_game] run function yrfs_reversi:gui/confirm_end_game
+  execute if entity @s[tag=reversi_gui_end_game] run function yrfs_reversi:gui/confirm_end_game/_
 
 # ゲームを終了する → はい
   execute if entity @s[tag=reversi_gui_confirm_end_game_yes] run function yrfs_reversi:gui/end_game
 
 # ゲームを終了する → いいえ
-  execute if entity @s[tag=reversi_gui_confirm_end_game_no] run function yrfs_reversi:gui/display_end_game_button
+  execute if entity @s[tag=reversi_gui_confirm_end_game_no] run function yrfs_reversi:gui/display_end_game_button/_
 
 # 観戦
   execute if entity @s[tag=reversi_gui_spectate] as @a[tag=reversi_clicker] at @s run function reversi:command/spectate_camera

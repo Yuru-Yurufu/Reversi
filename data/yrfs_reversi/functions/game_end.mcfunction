@@ -25,7 +25,7 @@
   execute if score result_black_count reversi = result_white_count reversi run data modify storage yrfs_reversi: root.title.result.winner set value '[{"translate":"yrf_system:space_70"},{"text":"DRAW","font":"reversi","color":"#181800"},{"translate":"yrf_system:space_70"}]'
 
 # GUI
-  function yrfs_reversi:gui/start_menu
+  function yrfs_reversi:gui/start_menu/_
 
 # ゲーム終了の演出
   data modify storage yrfs_reversi: root.can_respectate_loop set value 1b

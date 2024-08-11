@@ -211,13 +211,14 @@
 
 # 操作パネル
   summon marker 0.0 3.2 15.0 {Tags:["reversi","reversi_gui_center"]}
-  function yrfs_reversi:gui/display_end_game_button
+  function yrfs_reversi:gui/display_end_game_button/_
 
 # 視点先操作
   summon marker 0.0 0.0 0.0 {Tags:["reversi","reversi_find_gaze_point"],Invulnerable:1b}
 
 # ゲーム設定
-  data modify storage yrfs_reversi: root set value {game_status:{in_game:true,turn:"black",is_cpu:{black:false,white:false}},pass_count:0b}
+  data modify storage yrfs_reversi: root.game_status set value {in_game:true,turn:"black",is_cpu:{black:false,white:false}}
+  data modify storage yrfs_reversi: root.pass_count set value 0b
   scoreboard players set turn reversi 0
 
 # titleに表示する内容の設定

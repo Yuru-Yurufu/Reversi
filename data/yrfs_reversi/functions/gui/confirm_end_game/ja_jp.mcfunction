@@ -1,13 +1,10 @@
-#> yrfs_reversi:gui/confirm_end_game
+#> yrfs_reversi:gui/confirm_end_game/ja_jp
 #
-# ゲーム終了の確認メッセージを表示する
+# 使用言語がja_jpの時の確認メッセージの表示
 #
-# @within function yrfs_reversi:click_detection/im_gui_interaction
+# @within function yrfs_reversi:gui/confirm_end_game/_
 
-# 表示してたものを消す
-  kill @e[tag=reversi_gui]
-
-# 新たに表示
+# 表示
   summon text_display 0.0 3.7 14.999 {Tags:["reversi","reversi_gui","reversi_gui_display","reversi_gui_confirm_end_game"],text:'{"text":"ゲームを終了します。\\n本当によろしいですか？"}',background:0,Rotation:[-180f,0f]}
   summon text_display 0.51 3.3 14.999 {Tags:["reversi","reversi_gui","reversi_gui_display","reversi_gui_confirm_end_game_yes"],text:'{"text":"はい","underlined":false}',background:0,Rotation:[-180f,0f]}
   summon interaction 0.5 3.3 15.239 {Tags:["reversi","reversi_interaction","reversi_gui","reversi_gui_interaction","reversi_gui_confirm_end_game_yes"],width:0.48f,height:0.3f}

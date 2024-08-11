@@ -3,7 +3,8 @@
 # 帰りたいときに帰ろう
 #
 # @within function
-#           yrfs_reversi:result/gui/2
+#           yrfs_reversi:result/gui/en_us/2
+#           yrfs_reversi:result/gui/ja_jp/2
 #           yrfs_reversi:result/gui/leave_detection
 
 # 元の位置に戻す
