@@ -6,10 +6,6 @@
 #           yrfs_reversi:game_end
 #           yrfs_reversi:language/sync
 
-# プレイヤーのタグをリセット
-  tag @a[tag=reversi_player_black] remove reversi_player_black
-  tag @a[tag=reversi_player_white] remove reversi_player_white
-
 # 表示してたものを消す
   kill @e[tag=reversi_gui]
 

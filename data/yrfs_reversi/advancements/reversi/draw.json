@@ -1,0 +1,21 @@
+{
+    "parent": "yrfs_reversi:reversi/first_win",
+    "criteria": {
+        "trigger": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {
+            "translate": "yrfs_reversi:advancements.draw.title"
+        },
+        "description": {
+            "translate": "yrfs_reversi:advancements.draw.description"
+        },
+        "icon": {
+            "item": "minecraft:gray_dye"
+        },
+        "announce_to_chat": true,
+        "show_toast": true
+    }
+}

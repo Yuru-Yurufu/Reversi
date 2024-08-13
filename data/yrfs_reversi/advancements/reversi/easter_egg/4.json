@@ -1,0 +1,41 @@
+{
+    "criteria": {
+        "trigger": {
+            "trigger": "item_used_on_block",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "location_check",
+                        "predicate": {
+                            "block": {
+                                "blocks": [
+                                    "polished_blackstone_button"
+                                ],
+                                "state": {
+                                    "powered": "true"
+                                }
+                            },
+                            "position": {
+                                "x": {
+                                    "max": -6,
+                                    "min": -7
+                                },
+                                "y": {
+                                    "max": 5,
+                                    "min": 4
+                                },
+                                "z": {
+                                    "max": -42,
+                                    "min": -43
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "yrfs_reversi:advancements/easter_egg/individual"
+    }
+}
