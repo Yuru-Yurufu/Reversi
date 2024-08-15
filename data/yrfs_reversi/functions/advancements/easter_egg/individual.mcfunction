@@ -21,4 +21,4 @@
   execute if entity @s[advancements={yrfs_reversi:reversi/easter_egg/5=true}] run scoreboard players add easter_egg reversi 1
 
 # tellraw
-  execute if score easter_egg reversi matches ..4 run tellraw @s [{"text":"隠されたボタンを見つけた！ ("},{"score":{"name":"easter_egg","objective":"reversi"}},{"text":"/5)"}]
+  execute if score easter_egg reversi matches ..4 run tellraw @s [{"translate":"yrfs_reversi:tellraw.found_the_hidden_button"},{"text":" ("},{"score":{"name":"easter_egg","objective":"reversi"}},{"text":"/5)"}]

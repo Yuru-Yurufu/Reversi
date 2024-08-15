@@ -8,4 +8,4 @@
   playsound minecraft:entity.player.levelup master @s ~ ~ ~
 
 # tellraw
-  tellraw @s [{"text":"全ての隠されたボタンを見つけた！"}]
+  tellraw @s [{"translate":"yrfs_reversi:tellraw.found_all_the_hidden_buttons"}]
