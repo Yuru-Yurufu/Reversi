@@ -21,7 +21,8 @@
   execute unless entity @e[type=marker,tag=reversi_marker,tag=reversi_can_place_here] run return 0
 
 # パスの演出
-  title @a title [{"text":"パス","font":"reversi","color":"#181800"},{"translate":"yrf_system:space_3"}]
+  execute if data storage yrfs_reversi: {root:{language:"en_us"}} run title @a title [{"text":"pass","font":"reversi","color":"#181800"}]
+  execute if data storage yrfs_reversi: {root:{language:"ja_jp"}} run title @a title [{"text":"パス","font":"reversi","color":"#181800"},{"translate":"yrf_system:space_3"}]
   execute as @a at @s run playsound minecraft:block.note_block.bit master @s ~ ~ ~ 1 .5
 
 # ターン交代

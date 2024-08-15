@@ -2,10 +2,7 @@
 #
 # パネルの言語を現在の使用言語に合わせる
 #
-# @within function yrfs_reversi:load
-
-# kill
-  kill @e[tag=reversi_lang_item]
+# @within function yrfs_reversi:sc_load
 
 # 使用言語の確認
   function yrfs_reversi:language/check

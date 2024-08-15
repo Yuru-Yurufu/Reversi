@@ -9,7 +9,9 @@
   scoreboard objectives add reversi_rotation_delay dummy
   scoreboard objectives add reversi_cpu_surrounded dummy
   scoreboard objectives add reversi_cpu_surrounded_temp dummy
+  scoreboard objectives add reversi_game_start_time dummy
   scoreboard objectives add reversi_sneak_check minecraft.custom:sneak_time
+  scoreboard objectives add reversi_leave_world minecraft.custom:leave_game
 
 # forceload
   forceload add -1 -1 0 0

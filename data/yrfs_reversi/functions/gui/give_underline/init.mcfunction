@@ -2,7 +2,7 @@
 #
 # 下線をつける準備
 #
-# @within function yrfs_reversi:gui/find_gaze_point
+# @within function yrfs_reversi:gui/find_gaze_point/loop
 
 # tag
   tag @s add reversi_gui_show_underline_

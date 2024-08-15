@@ -4,7 +4,7 @@
 #
 # @within function
 #           yrfs_reversi:main
-#           yrfs_reversi:gui/find_gaze_point
+#           yrfs_reversi:gui/find_gaze_point/loop
 
 # タグリセット
   tag @s remove reversi_gui_show_underline

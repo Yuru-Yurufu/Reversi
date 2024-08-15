@@ -5,8 +5,8 @@
 # @user
 
 # 初期化
+  execute as @a[tag=reversi_result_viewer] run function yrfs_reversi:result/uuid_copy
   kill @e[tag=reversi]
-  tag @a[tag=reversi_result_viewer] remove reversi_result_viewer
 
 # オセロの石
   summon item_display -3.5 1.06 -3.5 {Tags:["reversi","reversi_disc"],item:{id:"minecraft:armor_stand",Count:1b,tag:{CustomModelData:3}},transformation:{left_rotation:{angle:0,axis:[0f,0f,1f]},right_rotation:{angle:0,axis:[0f,0f,1f]},translation:[0f,0f,0f],scale:[0.64f,0.64f,0.64f]},interpolation_duration:5,teleport_duration:1}
@@ -228,6 +228,10 @@
   scoreboard players set result_white_count reversi 2
 
   data modify storage yrfs_reversi: root.title set value {turn:'{"text":"\\u0001","font":"reversi"}',gage_background:[{"text":"左","font":"reversi","color":"#181881"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"中"},{"translate":"yrf_system:space_-4"},{"text":"中"},{"translate":"yrf_system:space_-3"},{"text":"右"}]}
+
+# ゲーム開始時のgametimeを取得しておく
+  execute store result score latest reversi_game_start_time run time query gametime
+  execute store result score @a[tag=reversi_player_white] reversi_game_start_time run time query gametime
 
 # ゲームスタート
   function yrfs_reversi:black/cpu/virtual_turn/init

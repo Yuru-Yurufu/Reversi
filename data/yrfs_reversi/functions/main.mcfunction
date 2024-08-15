@@ -13,3 +13,4 @@
 
 # カメラを見てる時の処理
   execute as @a[tag=reversi_camera_spectator,tag=!reversi_result_viewer] at @s if predicate yrfs_reversi:should_leave run function yrfs_reversi:result/uuid_copy
+  execute as @a[tag=reversi_camera_spectator,tag=!reversi_result_viewer] at @s unless entity @e[type=item_display,tag=reversi_camera,limit=1,distance=...1] run function yrfs_reversi:result/uuid_copy
