@@ -1,7 +1,7 @@
 {
     "criteria": {
         "hello_world": {
-            "trigger": "tick"
+            "trigger": "location"
         }
     },
     "display": {
