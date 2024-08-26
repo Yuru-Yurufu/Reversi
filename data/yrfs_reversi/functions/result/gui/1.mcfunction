@@ -15,6 +15,10 @@
   execute if score result_white_count reversi matches 64 run function yrfs_reversi:result/advancements_check/white_64
   execute if score result_black_count reversi matches 0 if score result_white_count reversi matches 40 unless entity @e[type=marker,tag=reversi_marker,predicate=yrfs_reversi:isnt_heart] as @a[predicate=yrfs_reversi:is_player,advancements={yrfs_reversi:reversi/big_heart=false},limit=2] run function yrfs_reversi:result/advancements_check/heart
 
+# 勝利回数カウント
+  execute unless data storage yrfs_reversi: {root:{game_status:{turn:"kill_process"}}} if score result_black_count reversi > result_white_count reversi as @a[tag=reversi_player_black,limit=1] run scoreboard players add @s reversi_win_count 1
+  execute unless data storage yrfs_reversi: {root:{game_status:{turn:"kill_process"}}} if score result_black_count reversi < result_white_count reversi as @a[tag=reversi_player_white,limit=1] run scoreboard players add @s reversi_win_count 1
+
 # game_statusの変更
   data modify storage yrfs_reversi: root.game_status.turn set value "result"
 
