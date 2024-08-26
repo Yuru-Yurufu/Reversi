@@ -10,7 +10,6 @@
 #           yrfs_reversi:gui/end_game
 
 # game_statusの変更
-  data modify storage yrfs_reversi: root.game_status.turn set value "result"
   data modify storage yrfs_reversi: root.game_status.in_game set value false
 
 # 石を数える

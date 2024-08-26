@@ -8,12 +8,15 @@
   execute as @a at @s run playsound entity.player.levelup master @s
 
 # advancements
-  execute if score result_black_count reversi > result_white_count reversi as @a[tag=reversi_player_black,advancements={yrfs_reversi:reversi/first_win=false},limit=1] run advancement grant @s only yrfs_reversi:reversi/first_win
-  execute if score result_black_count reversi < result_white_count reversi as @a[tag=reversi_player_white,advancements={yrfs_reversi:reversi/first_win=false},limit=1] run advancement grant @s only yrfs_reversi:reversi/first_win
-  execute if score result_black_count reversi = result_white_count reversi as @a[predicate=yrfs_reversi:is_player,advancements={yrfs_reversi:reversi/draw=false},limit=2] run advancement grant @s only yrfs_reversi:reversi/draw
+  execute unless data storage yrfs_reversi: {root:{game_status:{turn:"kill_process"}}} if score result_black_count reversi > result_white_count reversi as @a[tag=reversi_player_black,advancements={yrfs_reversi:reversi/first_win=false},limit=1] run advancement grant @s only yrfs_reversi:reversi/first_win
+  execute unless data storage yrfs_reversi: {root:{game_status:{turn:"kill_process"}}} if score result_black_count reversi < result_white_count reversi as @a[tag=reversi_player_white,advancements={yrfs_reversi:reversi/first_win=false},limit=1] run advancement grant @s only yrfs_reversi:reversi/first_win
+  execute unless data storage yrfs_reversi: {root:{game_status:{turn:"kill_process"}}} if score result_black_count reversi = result_white_count reversi as @a[predicate=yrfs_reversi:is_player,advancements={yrfs_reversi:reversi/draw=false},limit=2] run advancement grant @s only yrfs_reversi:reversi/draw
   execute if score result_black_count reversi matches 64 run function yrfs_reversi:result/advancements_check/black_64
   execute if score result_white_count reversi matches 64 run function yrfs_reversi:result/advancements_check/white_64
   execute if score result_black_count reversi matches 0 if score result_white_count reversi matches 40 unless entity @e[type=marker,tag=reversi_marker,predicate=yrfs_reversi:isnt_heart] as @a[predicate=yrfs_reversi:is_player,advancements={yrfs_reversi:reversi/big_heart=false},limit=2] run function yrfs_reversi:result/advancements_check/heart
+
+# game_statusの変更
+  data modify storage yrfs_reversi: root.game_status.turn set value "result"
 
 # プレイヤーのタグをリセット
   tag @a[tag=reversi_player_black] remove reversi_player_black
