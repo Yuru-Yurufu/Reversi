@@ -1,13 +1,12 @@
-#> yrfs_reversi:language/sync
+#> reversi:command/language/en
 #
-# パネルの言語を現在の使用言語に合わせる
+# 言語設定を英語にする
 #
-# @within function
-#           yrfs_reversi:sc_load
-#           reversi:command/language/default
+# @user
 
-# 使用言語の確認
-  function yrfs_reversi:language/check
+# 言語を設定
+  data modify storage yrfs_reversi: root.language set value "en_us"
+  data modify storage yrfs_reversi: root.language_force set value 1b
 
 # 操作パネルを再生成
   execute if entity @e[tag=reversi_gui_entry_black] run function yrfs_reversi:gui/start_menu/_
