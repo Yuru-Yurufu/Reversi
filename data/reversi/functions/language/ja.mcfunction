@@ -1,11 +1,11 @@
-#> reversi:command/language/en
+#> reversi:language/ja
 #
-# 言語設定を英語にする
+# 言語設定を日本語にする
 #
 # @user
 
 # 言語を設定
-  data modify storage yrfs_reversi: root.language set value "en_us"
+  data modify storage yrfs_reversi: root.language set value "ja_jp"
   data modify storage yrfs_reversi: root.language_force set value 1b
 
 # 操作パネルを再生成

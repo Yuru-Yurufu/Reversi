@@ -1,8 +1,8 @@
-#> reversi:command/start
+#> yrfs_reversi:command/start_cpu_black
 #
-# ゲームスタート (黒: Player, 白: Player)
+# ゲームスタート (黒: CPU, 白: Player)
 #
-# @user
+# @within function yrfs_reversi:gui/start_game
 
 # 初期化
   execute as @a[tag=reversi_result_viewer] run function yrfs_reversi:result/uuid_copy
@@ -141,70 +141,70 @@
   summon interaction 3.5 0.0001 3.5 {Tags:["reversi","reversi_interaction","reversi_board_interaction"],response:false}
 
 # データ管理用のマーカー
-  summon marker -3.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -3.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -2.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -1.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -0.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -0.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -0.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -0.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"white"}}
-  summon marker -0.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"black"}}
-  summon marker -0.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -0.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker -0.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 0.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 0.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 0.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 0.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"black"}}
-  summon marker 0.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"white"}}
-  summon marker 0.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 0.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 0.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 1.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 2.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-  summon marker 3.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
+  summon marker -3.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"corner",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -3.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"corner",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"x",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"x",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -2.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -1.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -0.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -0.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -0.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -0.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"white",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"white"},cpu_:{}}}
+  summon marker -0.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"black",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"black"},cpu_:{}}}
+  summon marker -0.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -0.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker -0.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 0.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 0.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 0.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 0.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"black",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"white"},cpu_:{}}}
+  summon marker 0.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"white",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"black"},cpu_:{}}}
+  summon marker 0.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 0.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 0.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 1.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"x",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"x",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 2.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 -3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"corner",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 -2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 -1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 -0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 0.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{position_type:"other",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{position_type:"c",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
+  summon marker 3.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{position_type:"corner",can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:"",cpu:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""},cpu_:{}}}
 
 # カメラ
   summon item_display 0.0 9.0 0.0 {Tags:["reversi","reversi_camera"],Rotation:[180f, 90f]}
@@ -217,9 +217,10 @@
   summon marker 0.0 0.0 0.0 {Tags:["reversi","reversi_find_gaze_point"],Invulnerable:1b}
 
 # ゲーム設定
-  data modify storage yrfs_reversi: root.game_status set value {in_game:true,turn:"black",is_cpu:{black:false,white:false}}
+  data modify storage yrfs_reversi: root.game_status set value {in_game:true,turn:"black",is_cpu:{black:true,white:false}}
   data modify storage yrfs_reversi: root.pass_count set value 0b
   scoreboard players set turn reversi 0
+  function yrfs_reversi:cpu/scoreboard_set
 
 # titleに表示する内容の設定
   title @a times 1 15 3
@@ -230,7 +231,7 @@
 
 # ゲーム開始時のgametimeを取得しておく
   execute store result score latest reversi_game_start_time run time query gametime
-  execute store result score @a[predicate=yrfs_reversi:is_player] reversi_game_start_time run time query gametime
+  execute store result score @a[tag=reversi_player_white] reversi_game_start_time run time query gametime
 
 # ゲームスタート
-  function yrfs_reversi:black/player/turn_start
+  function yrfs_reversi:black/cpu/virtual_turn/init

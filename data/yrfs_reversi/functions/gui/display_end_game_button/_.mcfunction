@@ -3,14 +3,14 @@
 # 「ゲームを終了する」を表示する
 #
 # @within function
-#           reversi:command/start
-#           reversi:command/start_cpu_black
-#           reversi:command/start_cpu_white
-#           reversi:command/start_cpu_both
+#           yrfs_reversi:command/start
+#           yrfs_reversi:command/start_cpu_black
+#           yrfs_reversi:command/start_cpu_white
+#           yrfs_reversi:command/start_cpu_both
 #           yrfs_reversi:click_detection/im_gui_interaction
 #           yrfs_reversi:language/sync
-#           reversi:command/language/en
-#           reversi:command/language/ja
+#           reversi:language/en
+#           reversi:language/ja
 
 # 表示してたものを消す
   kill @e[tag=reversi_gui]

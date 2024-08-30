@@ -2,7 +2,7 @@
 #
 # 使用言語がja_jpの時のゲーム中のGUI表示
 #
-# @within function reversi:gui/display_end_game_button/_
+# @within function yrfs_reversi:gui/display_end_game_button/_
 
 # 表示
   summon text_display 0.01 3.3 14.999 {Tags:["reversi","reversi_gui","reversi_gui_display","reversi_gui_end_game"],text:'{"text":"ゲームを終了する","underlined":false}',background:0,Rotation:[-180f,0f]}

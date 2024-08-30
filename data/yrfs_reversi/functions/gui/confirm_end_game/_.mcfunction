@@ -5,8 +5,8 @@
 # @within function
 #           yrfs_reversi:click_detection/im_gui_interaction
 #           yrfs_reversi:language/sync
-#           reversi:command/language/en
-#           reversi:command/language/ja
+#           reversi:language/en
+#           reversi:language/ja
 
 # 表示してたものを消す
   kill @e[tag=reversi_gui]

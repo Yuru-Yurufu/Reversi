@@ -1,4 +1,4 @@
-#> reversi:command/language/default
+#> reversi:language/default
 #
 # 言語設定をデフォルト(自動切替)にする
 #

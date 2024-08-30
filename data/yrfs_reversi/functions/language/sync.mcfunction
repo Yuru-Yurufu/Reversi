@@ -4,7 +4,7 @@
 #
 # @within function
 #           yrfs_reversi:sc_load
-#           reversi:command/language/default
+#           reversi:language/default
 
 # 使用言語の確認
   function yrfs_reversi:language/check

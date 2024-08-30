@@ -5,6 +5,8 @@
 # as,at: server
 #
 # @within function
+#           yrfs_reversi:command/start_cpu_black
+#           yrfs_reversi:command/start_cpu_both
 #           yrfs_reversi:white/turn_end
 #           yrfs_reversi:white/pass
 

@@ -3,7 +3,8 @@
 # ターンごとの準備
 #
 # @within function
-#           reversi:command/start
+#           yrfs_reversi:command/start
+#           yrfs_reversi:command/start_cpu_white
 #           yrfs_reversi:white/turn_end
 #           yrfs_reversi:white/pass
 

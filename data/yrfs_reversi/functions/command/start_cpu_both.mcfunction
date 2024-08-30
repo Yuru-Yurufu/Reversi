@@ -1,8 +1,8 @@
-#> reversi:command/start_cpu_white
+#> yrfs_reversi:command/start_cpu_both
 #
-# ゲームスタート (黒: Player, 白: CPU)
+# ゲームスタート (黒: CPU, 白: CPU)
 #
-# @user
+# @within function yrfs_reversi:gui/start_game
 
 # 初期化
   execute as @a[tag=reversi_result_viewer] run function yrfs_reversi:result/uuid_copy
@@ -217,7 +217,7 @@
   summon marker 0.0 0.0 0.0 {Tags:["reversi","reversi_find_gaze_point"],Invulnerable:1b}
 
 # ゲーム設定
-  data modify storage yrfs_reversi: root.game_status set value {in_game:true,turn:"black",is_cpu:{black:false,white:true}}
+  data modify storage yrfs_reversi: root.game_status set value {in_game:true,turn:"black",is_cpu:{black:true,white:true}}
   data modify storage yrfs_reversi: root.pass_count set value 0b
   scoreboard players set turn reversi 0
   function yrfs_reversi:cpu/scoreboard_set
@@ -231,7 +231,6 @@
 
 # ゲーム開始時のgametimeを取得しておく
   execute store result score latest reversi_game_start_time run time query gametime
-  execute store result score @a[tag=reversi_player_black] reversi_game_start_time run time query gametime
 
 # ゲームスタート
-  function yrfs_reversi:black/player/turn_start
+  function yrfs_reversi:black/cpu/virtual_turn/init
