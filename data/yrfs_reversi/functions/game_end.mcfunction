@@ -33,6 +33,7 @@
   scoreboard players set @a reversi_sneak_check 0
   execute as @a[tag=!reversi_camera_spectator] at @s run function yrfs_reversi:result/spectate_init
   gamemode spectator @a[tag=!reversi_camera_spectator]
+  execute at @e[type=item_display,tag=reversi_camera,limit=1] run tp @a[tag=!reversi_camera_spectator] ~ ~ ~ ~ ~
   execute as @a run spectate @e[type=item_display,tag=reversi_camera,limit=1] @s[tag=!reversi_camera_spectator]
   scoreboard players set result_timer_1 reversi -1
   scoreboard players set result_timer_2 reversi 0
