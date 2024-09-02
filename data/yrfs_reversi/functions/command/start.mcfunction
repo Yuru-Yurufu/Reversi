@@ -5,7 +5,10 @@
 # @within function yrfs_reversi:gui/start_game
 
 # 初期化
-  execute as @a[tag=reversi_result_viewer] run function yrfs_reversi:result/uuid_copy
+  execute as @a[tag=reversi_result_viewer,tag=!reversi_camera_spectator] run function yrfs_reversi:result/uuid_copy
+  title @a[tag=reversi_result_viewer] title ""
+  title @a[tag=reversi_result_viewer] actionbar ""
+  tag @a[tag=reversi_result_viewer] remove reversi_result_viewer
   kill @e[tag=reversi]
 
 # オセロの石
@@ -205,9 +208,6 @@
   summon marker 3.5 0 1.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
   summon marker 3.5 0 2.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
   summon marker 3.5 0 3.5 {Tags:["reversi","reversi_marker"],data:{can_reverse_direction:{nw:false,n:false,ne:false,w:false,e:false,sw:false,s:false,se:false},disc:""}}
-
-# カメラ
-  summon item_display 0.0 9.0 0.0 {Tags:["reversi","reversi_camera"],Rotation:[180f, 90f]}
 
 # 操作パネル
   summon marker 0.0 3.2 15.0 {Tags:["reversi","reversi_gui_center"]}
