@@ -5,7 +5,7 @@
             "max_inclusive": 48,
             "min_inclusive": 26
         },
-        "description": "Reversi Datapack v1.0.3"
+        "description": "Reversi Datapack v1.1.0"
     },
     "filter": {
         "block": [
