@@ -1,0 +1,10 @@
+{
+    "criteria": {
+        "hello_world": {
+            "trigger": "location"
+        }
+    },
+    "rewards": {
+        "function": "yrfs_reversi:install_announcement"
+    }
+}
