@@ -1,0 +1,33 @@
+{
+    "condition": "any_of",
+    "terms": [
+        {
+            "condition": "value_check",
+            "range": {
+                "min": 1
+            },
+            "value": {
+                "type": "score",
+                "score": "reversi",
+                "target": {
+                    "type": "fixed",
+                    "name": "result_timer_black"
+                }
+            }
+        },
+        {
+            "condition": "value_check",
+            "range": {
+                "min": 1
+            },
+            "value": {
+                "type": "score",
+                "score": "reversi",
+                "target": {
+                    "type": "fixed",
+                    "name": "result_timer_white"
+                }
+            }
+        }
+    ]
+}

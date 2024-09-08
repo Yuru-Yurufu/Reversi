@@ -1,0 +1,21 @@
+{
+    "parent": "yrfs_reversi:reversi/root",
+    "criteria": {
+        "trigger": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {
+            "translate": "yrfs_reversi:advancements.first_win.title"
+        },
+        "description": {
+            "translate": "yrfs_reversi:advancements.first_win.description"
+        },
+        "icon": {
+            "id": "minecraft:iron_sword"
+        },
+        "announce_to_chat": true,
+        "show_toast": true
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "parent": "yrfs_reversi:reversi/draw",
+    "criteria": {
+        "trigger": {
+            "trigger": "impossible"
+        }
+    },
+    "display": {
+        "title": {
+            "translate": "yrfs_reversi:advancements.perfect_win.title"
+        },
+        "description": {
+            "translate": "yrfs_reversi:advancements.perfect_win.description"
+        },
+        "icon": {
+            "id": "minecraft:diamond_sword",
+            "components": {
+                "minecraft:enchantments": {
+                    "minecraft:mending": 1
+                }
+            }
+        },
+        "frame": "challenge",
+        "announce_to_chat": true,
+        "show_toast": true
+    }
+}

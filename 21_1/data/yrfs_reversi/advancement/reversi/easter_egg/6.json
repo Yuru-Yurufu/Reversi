@@ -1,0 +1,38 @@
+{
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:default_block_use",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "block": {
+                                "blocks": [
+                                    "minecraft:polished_blackstone_button"
+                                ]
+                            },
+                            "position": {
+                                "x": {
+                                    "max": 11,
+                                    "min": 10
+                                },
+                                "y": {
+                                    "max": 2,
+                                    "min": 1
+                                },
+                                "z": {
+                                    "max": -10,
+                                    "min": -11
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "yrfs_reversi:advancements/easter_egg/individual"
+    }
+}

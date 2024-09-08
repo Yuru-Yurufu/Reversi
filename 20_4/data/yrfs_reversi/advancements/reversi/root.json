@@ -1,0 +1,22 @@
+{
+    "criteria": {
+        "hello_world": {
+            "trigger": "location"
+        }
+    },
+    "display": {
+        "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+        "title": {
+            "translate": "yrfs_reversi:advancements.root.title"
+        },
+        "description": {
+            "translate": "yrfs_reversi:advancements.root.description"
+        },
+        "icon": {
+            "item": "armor_stand",
+            "nbt": "{CustomModelData:1}"
+        },
+        "announce_to_chat": false,
+        "show_toast": true
+    }
+}
